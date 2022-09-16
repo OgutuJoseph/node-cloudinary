@@ -1,12 +1,13 @@
 const express = require('express')
 const dotenv = require('dotenv');
-const { application } = require('express');
+
+const app = express();
 dotenv.config();
 
 
 
 /** connet app */
 const port = process.env.PORT;
-application.listen(`${port}`, () => {
+app.listen(`${port}`, () => {
     console.log(`Server running on port ${port}`)
 });
