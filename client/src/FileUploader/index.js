@@ -24,14 +24,14 @@ export const FileUploader = ({ onSuccess }) => {
         const data = new FormData();
 
         for (let i = 0; i < files.length; i++) {
-            data.append('file', files[i])
+            data.append('profile-file', files[i])
         }
         
-        data.append('customer_email', userInput.customer_email);
-        data.append('customer_names', userInput.customer_names);
-        data.append('reference', userInput.reference);
+        // data.append('customer_email', userInput.customer_email);
+        // data.append('customer_names', userInput.customer_names);
+        // data.append('reference', userInput.reference);
 
-        axios.post('http://localhost:8000/upload', data)
+        axios.post('http://localhost:5000/profile-upload-single', data)
                 .then((response) => { 
                     console.log('Success!')
                     toast.success('File(s) Uploaded Successfully!')
