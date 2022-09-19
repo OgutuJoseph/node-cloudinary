@@ -1,7 +1,6 @@
 import { useState } from 'react';
 import './styles.css';
-import axios from 'axios'; 
-import FileUploader  from '../File/FileUploader';
+import axios from 'axios';  
 
 export const Form = ({ onSuccess }) => {
 
@@ -22,36 +21,38 @@ export const Form = ({ onSuccess }) => {
         data.append('name', name);
         data.append('avatar', selectedFile);
 
-        axios.post('http://localhost:5000/users/create', data)
+        axios.post('/users/create', data)
                 .then((res) => {
                     alert('User created sucessfully')
+                    console.log(res)
                 })
                 .catch((err) => {  
+                    alert('Error on Submission')
                     console.log(err)
                 })
     }
 
-    const handleSubmission = () => {
-		const formData = new FormData();
+    // const handleSubmission = () => {
+	// 	const formData = new FormData();
 
-        formData.append('name', name)
-		formData.append('avatar', selectedFile);
+    //     formData.append('name', name)
+	// 	formData.append('avatar', selectedFile);
 
-		fetch(
-			'http://localhost:5000/users/create',
-			{
-				method: 'POST',
-				body: formData, 
-			}
-		)
-			.then((res) => res.json())
-			.then((result) => {
-				console.log('Success:', result);
-			})
-			.catch((error) => {
-				console.error('Error:', error);
-			});
-	}; 
+	// 	fetch(
+	// 		'http://localhost:5000/users/create',
+	// 		{
+	// 			method: 'POST',
+	// 			body: formData, 
+	// 		}
+	// 	)
+	// 		.then((res) => res.json())
+	// 		.then((result) => {
+	// 			console.log('Success:', result);
+	// 		})
+	// 		.catch((error) => {
+	// 			console.error('Error:', error);
+	// 		});
+	// }; 
 
     return (
         <>
@@ -80,7 +81,7 @@ export const Form = ({ onSuccess }) => {
                 }
                 </div> 
 
-                <button onClick={handleSubmission}>Submit</button>
+                <button onClick={handleSubmit}>Submit</button>
             </form>
         </>
     )
