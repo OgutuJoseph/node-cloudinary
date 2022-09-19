@@ -21,7 +21,8 @@ router.post('/create', upload.single('avatar'), async (req, res) => {
 
         // Save user
         await user.save(); 
-        res.json(user);
+        // res.json(user);
+        res.status(200).json(user)
 
 
     } catch (error) {
