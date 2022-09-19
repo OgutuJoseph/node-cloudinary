@@ -1,10 +1,11 @@
 import './App.css';
-import { FileUploader } from './FileUploader';
+import { Form } from './Form';
 
 function App() {
   return (
     <div className="App">
-      <FileUploader />
+      Node - Cloudinary
+      <Form />
     </div>
   );
 }
