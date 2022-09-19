@@ -1,0 +1,13 @@
+.fileForm { 
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.textInput {
+    padding: 20px 30px;
+}
+
+.fileInput {
+    padding: 20px 30px;
+}
